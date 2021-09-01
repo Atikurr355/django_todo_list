@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Task{% endblock  %}
+
+{% block content %}
+<div class="container my-2">
+    <h2 class="text-center py-3">here is the list of your tasks</h2>
+    <table class="table table-hover table-light" id="myTable">
+        <thead>
+            <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in task %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{t.title}}</td>
+                <td>{{t.desc}}</td>
+                <td>{{t.time}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock  %}
